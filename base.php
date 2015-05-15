@@ -1,4 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
 <?php
+
 $teams = [
 	[
 		'name' => 'São Paulo',
@@ -38,6 +43,18 @@ $players = [
 	],
 	[
 		'name' => 'Nardella',
+		'teams' => ['Joinville']
+	],
+	[
+		'name' => 'Zé Love',
+		'teams' => ['Coritiba', 'Santos']
+	],
+	[
+		'name' => 'Arouca',
+		'teams' => ['São Paulo', 'Santos']
+	],
+	[
+		'name' => 'Ivan',
 		'teams' => ['Joinville']
 	]
 ];
