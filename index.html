@@ -42,30 +42,30 @@
 		<section class="container">
 			<div class="section group">
 				<section id="workshop">
-                    <h1>Workshop: Programação Funcional</h1>
-                    <article>
-                        <ul class="section group">
-                            <li class="col span_4_of_12 center">
-                                <figure>
-                                    <img src="lambda.png" id="img-lambda" class="img-circle" height="100" alt="Programação Funcional">
-                                </figure>
-                                <h2>Conceito</h2>
-                            </li>
-                            <li class="col span_4_of_12 center">
-                                <figure>
-                                    <img src="http://thyagorafaell.github.io/img/php.png" id="img-php" class="img-circle" height="100" alt="Programação Funcional em PHP">
-                                </figure>
-                                <h2>Em PHP</h2>
-                            </li>
-                            <li class="col span_4_of_12 center">
-                                <figure>
-                                    <img src="http://thyagorafaell.github.io/img/javascript.png" id="img-js" class="img-circle" height="100" alt="Programação Funcional em Javascript">
-                                </figure>
-                                <h2>Em JS</h2>
-                            </li>
-                        </ul>
-                    </article>
-                </section>
+					<h1>Workshop: Programação Funcional</h1>
+					<article>
+						<ul class="section group">
+							<li class="col span_4_of_12 center">
+								<figure>
+									<img src="lambda.png" id="img-lambda" class="img-circle" height="100" alt="Programação Funcional">
+								</figure>
+								<h2>Conceito</h2>
+							</li>
+							<li class="col span_4_of_12 center">
+								<figure>
+									<img src="http://thyagorafaell.github.io/img/php.png" id="img-php" class="img-circle" height="100" alt="Programação Funcional em PHP">
+								</figure>
+								<h2>Em PHP</h2>
+							</li>
+							<li class="col span_4_of_12 center">
+								<figure>
+									<img src="http://thyagorafaell.github.io/img/javascript.png" id="img-js" class="img-circle" height="100" alt="Programação Funcional em Javascript">
+								</figure>
+								<h2>Em JS</h2>
+							</li>
+						</ul>
+					</article>
+				</section>
 			</div>
 		</section>
 	</header>
@@ -74,25 +74,59 @@
 		<section class="container">
 			<h1>Conceito</h1>
 			<article>
+				<h3>First-Class Functions</h1>
 				<p>
-					<ul>
-						<li>
-							First-Class Functions
-							<pre>Funções atribuidas a variáveis.</pre>
-						</li>
-						<li>
-							High-Order Functions
-							<pre>Funções que recebem ou retornam outras funções.</pre>
-						</li>
-						<li>
-							Closures/ funções anônimas/ lambda
-						</li>
-						<li>
-							Imutabilidade
-						</li>
-					</ul>
+					Funções atribuidas a variáveis.
 				</p>
+<pre><code class="php">$showMessage = function($message) {
+	echo $message;
+};
+</code></pre>
+<pre><code class="javascript">var showMessage = function(message) {
+	console.log(message);
+};
+</code></pre>
 			</article>
+			<article>
+				<h3>High-Order Functions</h1>
+				<p>
+					Funções que recebem ou retornam outras funções.
+				</p>
+<pre><code class="php">$isOver18 = function($person) {
+    return $person['age'] >= 18;
+};
+
+$output = array_filter($people, $isOver18);
+</code></pre>
+<pre><code class="javascript">var isOver18 = function(person) {
+    return +person.age >= 18;
+},
+
+output = _.filter(people, isOver18);
+</code></pre>
+			</article>
+			<article>
+				<h3>Closures/ funções anônimas/ lambda</h1>
+<pre><code class="php">$output = array_filter($people, function($person) {
+    return $person['age'] >= 18;
+});
+</code></pre>
+<pre><code class="javascript">var output = _.filter(people, function(person) {
+    return +person.age >= 18;
+});
+</code></pre>
+			</article>
+			<article>
+				<h3>Imutabilidade</h1>
+<pre><code class="php">$original = [1, 2, 3, 4, 5];
+$new = array_map(function($item) {
+	return $item * 2;
+}, $original);
+
+// $original retorna [1, 2, 3, 4, 5]
+// $new retorna [2, 4, 6, 8 10]
+</code></pre>
+				</article>
 		</section>
 	</section>
 
@@ -103,26 +137,26 @@
 				<p>
 					<ul>
 						<li class="col span_4_of_12 center">
-                            <figure>
-                                <img src="http://www.erlang.org/images/erlang.png" id="img-erlang" class="img-circle" height="100" alt="Erlang">
-                            </figure>
-                            <h2>Erlang</h2>
-                            <p>WhatsApp, chat do Facebook</p>
-                        </li>
-                        <li class="col span_4_of_12 center">
-                            <figure>
-                                <img src="https://www.haskell.org/static/img/logo.png" id="img-haskell" class="img-circle" height="100" alt="Haskell">
-                            </figure>
-                            <h2>Haskell</h2>
-                            <p>Facebook</p>
-                        </li>
-                        <li class="col span_4_of_12 center">
-                            <figure>
-                                <img src="http://www.scala-lang.org/resources/img/smooth-spiral.png" id="img-scala" class="img-circle" height="100" alt="Scala">
-                            </figure>
-                            <h2>Scala</h2>
-                            <p>Twitter, Linkedin</p>
-                        </li>
+							<figure>
+								<img src="http://www.erlang.org/images/erlang.png" id="img-erlang" class="img-circle" height="100" alt="Erlang">
+							</figure>
+							<h2>Erlang</h2>
+							<p>WhatsApp, chat do Facebook</p>
+						</li>
+						<li class="col span_4_of_12 center">
+							<figure>
+								<img src="https://www.haskell.org/static/img/logo.png" id="img-haskell" class="img-circle" height="100" alt="Haskell">
+							</figure>
+							<h2>Haskell</h2>
+							<p>Facebook</p>
+						</li>
+						<li class="col span_4_of_12 center">
+							<figure>
+								<img src="http://www.scala-lang.org/resources/img/smooth-spiral.png" id="img-scala" class="img-circle" height="100" alt="Scala">
+							</figure>
+							<h2>Scala</h2>
+							<p>Twitter, Linkedin</p>
+						</li>
 					</ul>
 				</p>
 			</article>
